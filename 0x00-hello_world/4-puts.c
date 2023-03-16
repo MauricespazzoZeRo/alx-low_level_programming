@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
+ * Description: Print with the "puts" function
  * Statement - Use puts to print
  */
 int main(void)
