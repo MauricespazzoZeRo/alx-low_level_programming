@@ -3,6 +3,7 @@
  * main - Entry point
  * Description: Print with the "puts" function
  * Statement - Use puts to print
+ * Return: Anything
  */
 int main(void)
 {
