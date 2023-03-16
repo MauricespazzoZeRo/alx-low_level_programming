@@ -1,10 +1,14 @@
 #include <stdio.h>
 /**
- * Use printf to print a text
- * main: entry point (void)
- * printf - Print a text as inputted
- * Description: Use function printf to print
- * Return: Anything
+ * main - Entry point for the program
+ *
+ * This function serves as the entry point for the program. It initializes any
+ * necessary data structures, performs any required setup, and then begins
+ * executing the main logic of the program. 
+ *
+ * printf - print function
+ *
+ * Return: 0 if the program executed successfully, non-zero otherwise.
  */
 int main(void)
 {
