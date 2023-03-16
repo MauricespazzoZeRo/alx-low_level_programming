@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * printf - Print a text as inputted
- * main - Entry point
+ * main - void
  * Description: Use function printf to print
  * Return: Anything
  */
