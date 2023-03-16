@@ -1,5 +1,6 @@
 #include <stdio.h>
 /**
+ * Use printf to print a text
  * main: entry point (void)
  * printf - Print a text as inputted
  * Description: Use function printf to print
