@@ -1,7 +1,7 @@
 #include <stdio.h>
-/*
- * main -Entry point
- * Statement
+/**
+ * main - Entry point
+ * Statement - Use puts to print
  */
 int main(void)
 {
