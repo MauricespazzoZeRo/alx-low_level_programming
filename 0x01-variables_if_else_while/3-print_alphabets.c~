@@ -1,0 +1,30 @@
+#include <stdio.h>
+/* Input other headers here */
+
+/**
+ * main - Entry Point
+ *
+ * This program will print the alphabets
+ * in lowercase with a new line.
+ *
+ * Return: 0 for successful execution
+ */
+int main(void)
+{
+	char alpha;
+
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+	{
+		putchar(alpha);
+	}
+
+	char ALPHA;
+	
+	for (alpha = 'A'; alpha <= 'Z'; alpha++)
+	{
+		putchar(ALPHA);
+	}
+	putchar('\n');
+
+	return (0);
+}
