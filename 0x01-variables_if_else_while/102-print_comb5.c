@@ -23,8 +23,11 @@ int main(void)
 			putchar(' ');
 			putchar((sin2 / 10) + '0');
 			putchar((sin2 % 10) + '0');
-			putchar(',');
-			putchar(' ');
+			if (sin1 < 98 && sin2 <100)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 
