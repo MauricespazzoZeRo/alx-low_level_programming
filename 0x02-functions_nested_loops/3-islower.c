@@ -3,7 +3,7 @@
 /**
  * _islower - Check for lowercase chars.
  *
- * c - variable that reps. chars.
+ * @c: variable that reps. chars. in ASCII.
  *
  * Return: 1 if c is lowercase, 0 for other.
  */
