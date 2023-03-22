@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_last_digit - print the last digit of a number
@@ -11,9 +12,13 @@ int print_last_digit(int n)
 {
 	int last_digit;
 
+	if (n == INT_MIN)
+	{
+		return (8);
+	}
 	if (n < 0)
 	{
-		n = -n; /* convert negative number to positive */
+		n = -n;
 	}
 
 	if (n > 0)
