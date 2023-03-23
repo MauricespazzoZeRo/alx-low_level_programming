@@ -4,6 +4,9 @@
 
 #include <stdio.h>
 
+/* Declare largest_number function */
+int largest_number(int a, int b, int c);
+
 /* Declare positive_or_negative function */
 void positive_or_negative(int i);
 
