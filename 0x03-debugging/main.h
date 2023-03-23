@@ -4,6 +4,12 @@
 
 #include <stdio.h>
 
+/* Declare convert_day function */
+int convert_day(int month, int day);
+
+/* Declare print_remaining_days function */
+void print_remaining_days(int month, int day, int year);
+
 /* Declare largest_number function */
 int largest_number(int a, int b, int c);
 
