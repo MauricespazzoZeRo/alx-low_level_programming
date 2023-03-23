@@ -10,7 +10,6 @@ int main(void)
 		int i;
 
 		i = 0;
-		printf("Testing %d:\n", i);
 		positive_or_negative(i);
 
 		return (0);
