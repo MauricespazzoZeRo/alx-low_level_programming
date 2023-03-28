@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * swap_int - Swaps the value  of teo integers.
+ * _strlen - counts chard in a string.
  *
  * @s: unsigned char used
  *
@@ -17,5 +17,5 @@ int _strlen(char *s)
 		length++;
 		s++;
 	}
-	return length;
+	return (length);
 }
