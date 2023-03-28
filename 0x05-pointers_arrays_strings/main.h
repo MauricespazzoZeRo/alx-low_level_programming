@@ -3,9 +3,11 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <string.h>
 
 void swap_int(int *a, int *b);
 
+/* Declaration of _strlen function */
 int _strlen(char *s);
 
 void _puts(char *str);
