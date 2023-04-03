@@ -5,8 +5,8 @@
  * character c in the string s, or NULL if the character is
  * not found.
  *
- * @s:
- * @c:
+ * @s: Char to scan or search
+ * @c: Char searched for
  *
  * Return: s or NULL
  */
