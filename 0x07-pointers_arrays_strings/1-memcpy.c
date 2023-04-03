@@ -14,7 +14,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	char *tst_dest = dest;
 	char *tst_src = src;
-	unsigned int arrmem;
+	unsigned int arrmem = 0;
 
 	while ((n > 0) && (arrmem < n))
 	{
