@@ -1,0 +1,32 @@
+#include "main.h"
+
+/**
+ * _strpbrk - Returns a pointer to the first occurence of the
+ * character c in the string s, or NULL if the character is
+ * not found.
+ *
+ * @s: Char to scan or search
+ * @c: Char(s) searched for
+ *
+ * Return: s or NULL
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	unsigned int x, y;
+
+	for (x = 0; s[x] != '\0'; x++)
+	{
+		for (y = 0; accept[y] != '\0'; y++)
+		{
+			if (*s == *accept)
+			{
+				return (s);
+			}
+
+			s++;
+		}
+	}
+
+	return (NULL);
+}
