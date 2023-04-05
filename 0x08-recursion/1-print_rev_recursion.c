@@ -1,7 +1,11 @@
 #include "main.h"
 
 /**
- * print_rev_recursion - Prints a string in reverse
+ * _print_rev_recursion - Prints a string in reverse
+ *
+ * This function prints a string in its reverse order
+ * using recursion to recursively call the line of code
+ * that switches it.
  *
  * @s: String character to be inputed and reversed
  *
