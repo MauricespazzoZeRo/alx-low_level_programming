@@ -11,13 +11,12 @@
  */
 int palindrome_helper(char *s, int start, int end)
 {
-	/* Base case: If we have reached the middle of the string and all \
-characters match, it is a palindrome */
+	/* Base case: If we have reached the middle of the string and all
+	/* characters match, it is a palindrome */
 	if (start >= end)
 		return (1);
 
-	/* Recursive case: Compare the characters at the start and end \
-of the string */
+	/* Recursive case: Compare characters at the start and end of the string */
 	if (s[start] != s[end])
 		return (0);
 
