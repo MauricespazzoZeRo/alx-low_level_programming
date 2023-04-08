@@ -4,6 +4,9 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
+
+int sqrt_helper(int n, int i);
 
 void _puts_recursion(char *s);
 
