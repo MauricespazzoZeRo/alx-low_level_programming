@@ -6,6 +6,8 @@
 #include <string.h>
 #include <math.h>
 
+int palindrome_helper(char *s, int start, int end);
+
 int is_prime_recursive(int n, int divisor);
 
 int sqrt_helper(int n, int i);
