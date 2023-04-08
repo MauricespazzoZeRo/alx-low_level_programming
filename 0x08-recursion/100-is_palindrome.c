@@ -11,9 +11,7 @@
  */
 int palindrome_helper(char *s, int start, int end)
 {
-	/** Base case: If we have reached the middle of the string and all
-	* characters match, it is a palindrome
-	*/
+	/* Base case:reached mid of string & all chrs match, it's a palindrome */
 	if (start >= end)
 		return (1);
 
@@ -37,5 +35,6 @@ int palindrome_helper(char *s, int start, int end)
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
+
 	return (palindrome_helper(s, 0, len - 1));
 }
