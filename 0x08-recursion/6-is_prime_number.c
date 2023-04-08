@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include "main.h"
+
 /**
  * is_prime_number - checks if a given number is a prime number
  * @n: the integer to check
@@ -8,21 +10,25 @@
  */
 int is_prime_number(int n)
 {
-	int divisor;
-
-	/* Handle special cases */
-	if (n < 2)
+	if (n <= 1) /* Base case 1 */
 		return (0);
-	if (n == 2)
+	if (n == 2 || n == 3) /* Base case 2 */
 		return (1);
+	return (is_prime_recursive(n, 2)); /* Call the recursive function */
+}
 
-	/* Check if n is divisible by any integer from 2 to sqrt(n) */
-	for (divisor = 2; divisor <= sqrt(n); divisor++)
-	{
-		if (n % divisor == 0)
-			return (0);
-	}
-
-	/* n is not divisible by any integer from 2 to sqrt(n), so it is prime */
-	return (1);
+/**
+ * is_prime_recursive - checks if a given number is a prime number recursively
+ * @n: the integer to check
+ * @divisor: the current divisor being checked
+ *
+ * Return: 1 if the integer is a prime number, 0 otherwise
+ */
+int is_prime_recursive(int n, int divisor)
+{
+	if (n % divisor == 0) /* Base case 3 */
+		return (0);
+	if (divisor * divisor > n) /* Base case 4 */
+		return (1);
+	return (is_prime_recursive(n, divisor + 1)); /* Recursive case */
 }

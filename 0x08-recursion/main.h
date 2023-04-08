@@ -6,6 +6,8 @@
 #include <string.h>
 #include <math.h>
 
+int is_prime_recursive(int n, int divisor);
+
 int sqrt_helper(int n, int i);
 
 void _puts_recursion(char *s);
