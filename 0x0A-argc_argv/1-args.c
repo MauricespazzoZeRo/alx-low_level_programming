@@ -8,7 +8,7 @@
  * Return: Always 0.
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
 	int i;
 
@@ -16,13 +16,12 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-	   		printf(argv[i] + 1);
-			printf("\n%d", i);
+			printf("%d\n", i);
 		}
 	}
 	else
 	{
-	  printf("%d", 0);
+	  printf("%d\n", 0);
 	}
 	return (0);
 }
