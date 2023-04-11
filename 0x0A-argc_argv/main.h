@@ -6,6 +6,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int palindrome_helper(char *s, int start, int end);
 
