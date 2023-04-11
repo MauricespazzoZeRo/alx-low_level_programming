@@ -29,18 +29,14 @@ char *argstostr(int ac, char **av)
 		{
 			len++;
 		}
-		total_len += len + 1; /* add 1 for the newline character */
+		total_len += len + 1;
 		len = 0;
 	}
-
-	/* Allocate memory for the new string */
 	str = malloc(sizeof(char) * total_len);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	/* Copy the arguments into the new string */
 	len = 0;
 	for (i = 0; i < ac; i++)
 	{
