@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	/* Go through main code individually, print number_of_bytes of mem as hex */
 	for (i = 0; i < number_of_bytes; i++)
 	{
-		printf("%02x ", *(main_addr + i) & 0xff); /* & 0xff: msk hex to 8 bits*/
+		printf("%02x ", *(main_addr + i) & 0xff);
 	}
 
 	printf("\n");
