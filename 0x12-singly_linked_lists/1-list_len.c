@@ -5,7 +5,7 @@
  *
  * @h: Pointer to list_t
  *
- * Returns: Number of elements in list_t
+ * Return: Number of elements in list_t
  */
 
 size_t list_len(const list_t *h)
