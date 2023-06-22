@@ -1,0 +1,24 @@
+#include "3-calc.h"
+
+int (*get_op_funct(char *s))(int, int)
+{
+	op_t s[] = {
+        {"+", op_add},
+        {"-", op_sub},
+        {"*", op_mul},
+        {"/", op_div},
+        {"%", op_mod},
+        {NULL, NULL}
+    };
+
+	int i = 0;
+
+	while (i < s[])
+	{
+		i++;
+		if (s[] != ("+" || "-" || "*" || "/" || "%"))
+		{
+			return (NULL);
+		}
+	}
+}
