@@ -25,4 +25,8 @@ void close_fd_and_exit(int fd);
 
 void copy_file(const char *file_from, const char *file_to);
 
+void display_error_and_exit(const char *msg);
+
+void print_elf_header_info(Elf64_Ehdr *elf_header);
+
 #endif /* MAIN_H */
