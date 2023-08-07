@@ -1,6 +1,26 @@
 #include "main.h"
 
 /**
+ * _strlen - counts chard in a string.
+ *
+ * @s: unsigned char used
+ *
+ * Return: Nothing
+ */
+
+int _strlen(const char *s)
+{
+	int length = 0;
+
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
+	return (length);
+}
+
+/**
  * display_error_and_exit - Displays an error message to stderr
  *							and exits with status code 98.
  *
@@ -8,7 +28,9 @@
  */
 void display_error_and_exit(const char *msg)
 {
-	fprintf(stderr, "Error: %s\n", msg);
+	write(2, "Error: ", 7);
+	write(2, msg, _strlen(msg));
+	write(2, "\n", 1);
 	exit(98);
 }
 /**
