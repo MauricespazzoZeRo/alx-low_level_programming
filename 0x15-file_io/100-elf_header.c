@@ -14,7 +14,7 @@ void display_error_and_exit(const char *msg)
 /**
  * print_elf_header_info - Prints the information contained
  *						   in the ELF header as specified.
-
+ *
  * @elf_header: A pointer to the ELF header structure.
  */
 void print_elf_header_info(Elf64_Ehdr *elf_header)
