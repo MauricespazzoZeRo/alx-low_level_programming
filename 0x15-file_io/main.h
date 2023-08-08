@@ -30,6 +30,8 @@ void display_error_and_exit(const char *msg);
 
 void print_elf_header_info(Elf64_Ehdr *elf_header);
 
+void get_OS(Elf64_Ehdr *elf_hdr);
+
 int _strlen(const char *s);
 
 #endif /* MAIN_H */

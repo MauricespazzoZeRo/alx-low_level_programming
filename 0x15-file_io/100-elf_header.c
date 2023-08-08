@@ -33,6 +33,35 @@ void display_error_and_exit(const char *msg)
 	write(2, "\n", 1);
 	exit(98);
 }
+
+/**
+ * get_OS - Prints the OS/ABI in elf header, as specified.
+ *
+ * @elf_hdr: A pointer to the ELF header structure.
+ */
+void get_OS(Elf64_Ehdr *elf_hdr)
+{
+	if (elf_hdr->e_ident[EI_OSABI] == ELFOSABI_SYSV)
+	{
+	printf(" OS/ABI:          UNIX - System V\n");
+	}
+	else if (elf_hdr->e_ident[EI_OSABI] == ELFOSABI_LINUX)
+	{
+		printf("OS/ABI:       UNIX - Linux\n");
+	}
+	else if (elf_hdr->e_ident[EI_OSABI] == ELFOSABI_NETBSD)
+	{
+		printf(" OS/ABI:      UNIX - NetBSD\n");
+	}
+	else if (elf_hdr->e_ident[EI_OSABI] == ELFOSABI_SOLARIS)
+	{
+		printf(" OS/ABI:      UNIX - Solaris\n");
+	}
+	else
+	{
+		printf(" OS/ABI:      Other\n");
+	}
+}
 /**
  * print_elf_header_info - Prints the information contained
  *						   in the ELF header as specified.
@@ -43,24 +72,41 @@ void print_elf_header_info(Elf64_Ehdr *elf_header)
 {
 	int i;
 
-	printf("Magic:	 ");
+	printf("ELF Header:\n");
+	printf(" Magic:	 ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
-		printf("%02x ", elf_header->e_ident[i]);
+		printf(" %02x ", elf_header->e_ident[i]);
 	}
 	printf("\n");
 
-	printf("Class:    %s\n", (elf_header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
-	printf("Data: %s\n", (elf_header->e_ident[EI_DATA] == ELFDATA2LSB) ? "2's complement, little-endian" : "2's complement, big-endian");
-	printf("Version: %d (current)\n", elf_header->e_ident[EI_VERSION]);
-	printf("OS/ABI:	%s\n", (elf_header->e_ident[EI_OSABI] == ELFOSABI_SYSV) ? "UNIX - System V" : "Other");
-	printf("ABI Version: %d\n", elf_header->e_ident[EI_ABIVERSION]);
+	if (elf_header->e_ident[EI_CLASS] == ELFCLASS32)
+	{
+		printf(" Class:		  ELF32\n");
+	}
+	else if (elf_header->e_ident[EI_CLASS] == ELFCLASS64)
+	{
+		printf(" Class:		  ELF64\n");
+	}
+	if (elf_header->e_ident[EI_DATA] == ELFDATA2LSB)
+	{
+		printf(" Data:		  2's complement, litle-endian\n");
+	}
+	else
+	{
+		printf(" Data:		  2's complement, big-endian\n");
+	}
 
-	printf("Type: %s\n", (elf_header->e_type == ET_EXEC) ? "EXEC (Executable file)" :
-														 (elf_header->e_type == ET_DYN) ? "DYN (Shared object file)" :
-														 (elf_header->e_type == ET_REL) ? "REL (Relocatable file)" : "Other");
+	printf(" Version:         %d (current)\n", elf_header->e_ident[EI_VERSION]);
+	get_OS(elf_header);
+	printf(" ABI Version:	  %d\n", elf_header->e_ident[EI_ABIVERSION]);
 
-	printf("Entry point address: %lx\n", elf_header->e_entry);
+	if (elf_header->e_type == ET_EXEC)
+	{
+		printf(" Type:		  EXEC (Executable file)\n");
+	}
+
+	printf(" Entry point address:   0x%lx\n", elf_header->e_entry);
 }
 
 /**
