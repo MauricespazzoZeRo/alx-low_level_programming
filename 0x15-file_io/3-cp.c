@@ -17,6 +17,7 @@ void print_usage_and_exit(void)
  *					the appropriate exit code.
  * @msg: The error message.
  * @file_name: The name of the file associated with the error.
+ * @xt_cde: Exit code for each case.
  */
 void error_and_exit(const char *msg, const char *file_name, int xt_cde)
 {
