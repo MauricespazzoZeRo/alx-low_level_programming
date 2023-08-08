@@ -50,7 +50,7 @@ void print_elf_header_info(Elf64_Ehdr *elf_header)
 	}
 	printf("\n");
 
-	printf("Class: %s\n", (elf_header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
+	printf("Class:    %s\n", (elf_header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
 	printf("Data: %s\n", (elf_header->e_ident[EI_DATA] == ELFDATA2LSB) ? "2's complement, little-endian" : "2's complement, big-endian");
 	printf("Version: %d (current)\n", elf_header->e_ident[EI_VERSION]);
 	printf("OS/ABI:	%s\n", (elf_header->e_ident[EI_OSABI] == ELFOSABI_SYSV) ? "UNIX - System V" : "Other");
