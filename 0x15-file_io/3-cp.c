@@ -18,10 +18,10 @@ void print_usage_and_exit(void)
  * @msg: The error message.
  * @file_name: The name of the file associated with the error.
  */
-void error_and_exit(const char *msg, const char *file_name)
+void error_and_exit(const char *msg, const char *file_name, int xt_code)
 {
 	dprintf(STDERR_FILENO, "Error: %s %s\n", msg, file_name);
-	exit(98);
+	exit(xt_code);
 }
 
 /**
@@ -32,7 +32,7 @@ void error_and_exit(const char *msg, const char *file_name)
  */
 void close_fd_and_exit(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
 
@@ -51,13 +51,13 @@ void copy_file(const char *file_from, const char *file_to)
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		error_and_exit("Can't read from file", file_from);
+		error_and_exit("Can't read from file", file_from, 98);
 	}
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, permit);
 	if (fd_to == -1)
 	{
-		error_and_exit("Can't write to", file_to);
+		error_and_exit("Can't write to", file_to, 99);
 	}
 
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -65,13 +65,13 @@ void copy_file(const char *file_from, const char *file_to)
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1)
 		{
-			error_and_exit("Can't write to", file_to);
+			error_and_exit("Can't write to", file_to, 99);
 		}
 	}
 
 	if (bytes_read == -1)
 	{
-		error_and_exit("Can't read from file", file_from);
+		error_and_exit("Can't read from file", file_from, 98);
 	}
 
 	if (close(fd_from) == -1)
