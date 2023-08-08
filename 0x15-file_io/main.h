@@ -20,7 +20,7 @@ int append_text_to_file(const char *filename, char *text_content);
 
 void print_usage_and_exit(void);
 
-void error_and_exit(const char *msg, const char *file_name);
+void error_and_exit(const char *msg, const char *file_name, int xt_cde);
 
 void close_fd_and_exit(int fd);
 

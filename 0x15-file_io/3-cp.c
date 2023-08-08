@@ -18,10 +18,10 @@ void print_usage_and_exit(void)
  * @msg: The error message.
  * @file_name: The name of the file associated with the error.
  */
-void error_and_exit(const char *msg, const char *file_name, int xt_code)
+void error_and_exit(const char *msg, const char *file_name, int xt_cde)
 {
 	dprintf(STDERR_FILENO, "Error: %s %s\n", msg, file_name);
-	exit(xt_code);
+	exit(xt_cde);
 }
 
 /**
