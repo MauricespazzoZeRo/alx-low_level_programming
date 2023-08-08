@@ -21,7 +21,7 @@ void print_usage_and_exit(void)
 void error_and_exit(const char *msg, const char *file_name)
 {
 	dprintf(STDERR_FILENO, "Error: %s %s\n", msg, file_name);
-	exit(99);
+	exit(98);
 }
 
 /**
@@ -32,7 +32,7 @@ void error_and_exit(const char *msg, const char *file_name)
  */
 void close_fd_and_exit(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
 	exit(100);
 }
 
